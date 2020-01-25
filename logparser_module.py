@@ -3,14 +3,9 @@ from arg_pars import parse_arg
 
 def run(args):
 	farg, link= parse_arg(args)
-	print "ana hena"
 	print(farg, link)
 	if farg is not None:
 		sys.stdout = open(farg, 'w')
-	print "ana hena2"
-	print(link)
-	print(link)
-	print(link)
 	if (link is None) or (len(link)==0):
 		help()
 		return
@@ -34,6 +29,7 @@ def _open_logs(file):
 	    return lst_output
 	except IOError:
 		print("can't open this file")
+		sys.exit()
 
 
 def _parse_logs(lst_output):
