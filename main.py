@@ -1,10 +1,11 @@
 import logparser_module
 import linkparser_module
 import monitor_module
-# import atdetect_module
+import atdetect_module
 import scanner_module
+import thread
 
-modules = [logparser_module, monitor_module, scanner_module, linkparser_module]
+modules = [logparser_module, monitor_module, scanner_module, linkparser_module, atdetect_module]
 def show_modules_screen():
     print("")
     print("To Choose from available modules enter number")
@@ -44,4 +45,7 @@ if __name__ == "__main__":
             modules[id - 1].help()
             continue
         print(cmd[2:])
-        modules[id - 1].run(cmd[2:])
+        if id == 5: # we will run the attack detect as thread
+            th = thread.start_new_thread(modules[4].run, ("",))
+        else:
+            modules[id - 1].run(cmd[2:])
