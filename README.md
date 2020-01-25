@@ -1,5 +1,4 @@
 # Python Tool
-Python tool used to ....................
 
 ## Installation
  you will need to install some packages first
@@ -9,6 +8,10 @@ pip2 install watchdog
 ```bash
 pip install tldextract
 ```
+```bash
+sudo pip install --upgrade python-iptables
+```
+
 ## Lest's Start
 ```bash
  python main.py
@@ -32,7 +35,7 @@ for ports scanner
 ```
 for link parser
 ```bash
-3
+4
 ```
 
 
